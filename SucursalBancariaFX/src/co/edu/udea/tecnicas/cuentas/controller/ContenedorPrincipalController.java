@@ -17,6 +17,7 @@ public class ContenedorPrincipalController {
 	
 	@FXML
 	private void mnuSalir_action() {
+		System.out.println("fasjfasfasfas");
 		System.exit(0);
 		System.out.print("gonorrea");
 	}
@@ -28,7 +29,6 @@ public class ContenedorPrincipalController {
 	
 	@FXML
 	private void mnuCuentaCaja_action() {
-		
 	}
 
 	@FXML

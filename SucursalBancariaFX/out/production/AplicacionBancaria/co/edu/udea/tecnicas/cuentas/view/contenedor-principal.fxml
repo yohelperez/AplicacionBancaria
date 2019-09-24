@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane fx:id="contenedorPrincipal" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.udea.tecnicas.cuentas.controller.ContenedorPrincipalController">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="Ingresar">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#mnuCuentaUsuario_action" text="Cuenta de usuario"/>
+                        <MenuItem mnemonicParsing="false" onAction="#mnuCuentaCaja_action" text="Cuenta de caja"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" onAction="#mnuCrearCuenta_action" text="Crear Cuenta"/>
+                <Menu mnemonicParsing="false" onAction="#mnuSalir_action" text="Salir"/>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>
