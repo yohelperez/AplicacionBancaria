@@ -1,4 +1,7 @@
 package co.edu.udea.tecnicas.cuentas.dao;
 
-public class ConsignacionDao {
+import co.edu.udea.tecnicas.cuentas.model.Consignacion;
+
+public interface ConsignacionDao {
+    void guardarConsignacion(Consignacion consignacion);
 }

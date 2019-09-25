@@ -1,4 +1,9 @@
 package co.edu.udea.tecnicas.cuentas.dao;
 
-public class CajaDao {
+import co.edu.udea.tecnicas.cuentas.model.Caja;
+
+import java.util.List;
+
+public interface CajaDao {
+    void guardarCaja(Caja caja);
 }
