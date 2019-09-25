@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="javafx" name="AplicacionBancaria">
-    <output-path>$PROJECT_DIR$/out/artifacts/AplicacionBancaria</output-path>
+    <output-path>$PROJECT_DIR$/SucursalBancariaFX/out/artifacts/AplicacionBancaria</output-path>
     <root id="root">
       <element id="archive" name="AplicacionBancaria.jar">
         <element id="module-output" name="AplicacionBancaria" />

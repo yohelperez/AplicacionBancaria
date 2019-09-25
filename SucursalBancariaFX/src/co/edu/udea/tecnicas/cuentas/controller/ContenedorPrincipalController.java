@@ -17,22 +17,21 @@ public class ContenedorPrincipalController {
 	
 	@FXML
 	private void mnuSalir_action() {
-		System.out.println("fasjfasfasfas");
 		System.exit(0);
-		System.out.print("gonorrea");
 	}
 	
 	@FXML
-	private void mnuCuentaUsuario_action() {
+	private void mnuIngresar_action() {
 		
 	}
 	
 	@FXML
-	private void mnuCuentaCaja_action() {
+	private void mnuCrearCuentaCaja_action() {
+		
 	}
 
 	@FXML
-	private void mnuCrearCuenta_action() {
+	private void mnuCrearCuentaUsuario_action() {
 		cambiarVentana(VentanasEnum.CREAR_CUENTA.nombre);
 	}
 	

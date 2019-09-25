@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
-<BorderPane fx:id="contenedorPrincipal" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="co.edu.udea.tecnicas.cuentas.controller.ContenedorPrincipalController">
-    <top>
-        <MenuBar>
-            <menus>
-                <Menu mnemonicParsing="false" text="Ingresar">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#mnuCuentaUsuario_action" text="Cuenta de usuario"/>
-                        <MenuItem mnemonicParsing="false" onAction="#mnuCuentaCaja_action" text="Cuenta de caja"/>
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" onAction="#mnuCrearCuenta_action" text="Crear Cuenta"/>
-                <Menu mnemonicParsing="false" onAction="#mnuSalir_action" text="Salir"/>
-            </menus>
-        </MenuBar>
-    </top>
+
+<BorderPane fx:id="contenedorPrincipal" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.tecnicas.cuentas.controller.ContenedorPrincipalController">
+   <top>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#mnuSalir_action" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Cuentas">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#mnuIngresar_action" text="Ingresar" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuCrearCuentaUsuario_action" text="Crear Cuenta Usuario" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuCrearCuentaCaja_action" text="Crear Cuenta Caja" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+   </top>
 </BorderPane>

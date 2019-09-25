@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ede2986-86ca-4ed5-9ef4-b79d765472ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/implementations/CajaDaoList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/implementations/ConsignacionDaoList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/implementations/CuentaDaoList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/implementations/RetiroDaoList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AplicacionBancaria.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AplicacionBancaria.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/CajaBsn.java" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/CajaBsn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/ConsignacionBsn.java" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/ConsignacionBsn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/CuentaBsn.java" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/CuentaBsn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/RetiroBsn.java" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/RetiroBsn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/CajaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/CajaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/ConsignacionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/ConsignacionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/CuentaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/CuentaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/RetiroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/RetiroDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/model/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/model/Cuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/out/production/AplicacionBancaria/co/edu/udea/tecnicas/cuentas/controller/ContenedorPrincipalController$VentanasEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/out/production/AplicacionBancaria/co/edu/udea/tecnicas/cuentas/controller/ContenedorPrincipalController$VentanasEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/out/production/AplicacionBancaria/co/edu/udea/tecnicas/cuentas/controller/ContenedorPrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/out/production/AplicacionBancaria/co/edu/udea/tecnicas/cuentas/controller/ContenedorPrincipalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/out/production/AplicacionBancaria/co/edu/udea/tecnicas/cuentas/controller/CrearCuentaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/out/production/AplicacionBancaria/co/edu/udea/tecnicas/cuentas/controller/CrearCuentaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/out/production/AplicacionBancaria/co/edu/udea/tecnicas/cuentas/view/contenedor-principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/out/production/AplicacionBancaria/co/edu/udea/tecnicas/cuentas/view/contenedor-principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/out/production/AplicacionBancaria/co/edu/udea/tecnicas/cuentas/view/crear-cuenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/out/production/AplicacionBancaria/co/edu/udea/tecnicas/cuentas/view/crear-cuenta.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/controller/ContenedorPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/controller/ContenedorPrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/controller/CrearCuentaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/controller/CrearCuentaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/view/contenedor-principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/view/contenedor-principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/view/crear-cuenta.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/view/crear-cuenta.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,133 +25,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/CuentaBsn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#196#197#0" expanded="true" />
-                <element signature="e#238#239#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/CajaBsn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#182#183#0" expanded="true" />
-                <element signature="e#220#221#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/RetiroBsn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#144#145#0" expanded="true" />
-                <element signature="e#208#209#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/bsn/ConsignacionBsn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="15" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#238#239#0" expanded="true" />
-                <element signature="e#292#293#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/implementations/CajaDaoList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/CajaDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/implementations/ConsignacionDaoList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/implementations/CuentaDaoList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/model/Cuenta.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SucursalBancariaFX/src/co/edu/udea/tecnicas/cuentas/dao/implementations/RetiroDaoList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -228,55 +100,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="cuentas" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AplicacionBancaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AplicacionBancaria" type="462c0819:PsiDirectoryNode" />
-              <item name="SucursalBancariaFX" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentas" type="462c0819:PsiDirectoryNode" />
-              <item name="bsn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AplicacionBancaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AplicacionBancaria" type="462c0819:PsiDirectoryNode" />
-              <item name="SucursalBancariaFX" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentas" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AplicacionBancaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AplicacionBancaria" type="462c0819:PsiDirectoryNode" />
-              <item name="SucursalBancariaFX" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentas" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AplicacionBancaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AplicacionBancaria" type="462c0819:PsiDirectoryNode" />
-              <item name="SucursalBancariaFX" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentas" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="implementations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AplicacionBancaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AplicacionBancaria" type="462c0819:PsiDirectoryNode" />
-              <item name="SucursalBancariaFX" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentas" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AplicacionBancaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AplicacionBancaria" type="462c0819:PsiDirectoryNode" />
-              <item name="SucursalBancariaFX" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cuentas" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -290,7 +113,7 @@
     <property name="last_opened_file_path" value="C:/Program Files/SceneBuilder/SceneBuilder.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -307,7 +130,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="C:\Program Files\Java\jdk1.8.0_201\jre" />
       <option name="MAIN_CLASS_NAME" value="co.edu.udea.tecnicas.cuentas.Main" />
       <module name="AplicacionBancaria" />
@@ -345,11 +168,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -364,13 +182,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10968000" />
+    <option name="totallyTimeSpent" value="11575000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1448" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2679083" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2679083" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -379,7 +196,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.14893617" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928367" visible="true" weight="0.3755047" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -388,7 +205,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32974428" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007163" side_tool="true" visible="true" weight="0.3755047" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32974428" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -614,7 +431,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
