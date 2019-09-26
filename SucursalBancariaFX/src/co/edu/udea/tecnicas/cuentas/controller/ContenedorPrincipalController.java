@@ -22,7 +22,7 @@ public class ContenedorPrincipalController {
 	
 	@FXML
 	private void mnuIngresarUsuario_action() {
-		
+		cambiarVentana(VentanasEnum.INGRESAR_USUARIO.nombre);
 	}
 	
 	@FXML
@@ -59,7 +59,7 @@ public class ContenedorPrincipalController {
     }
 	
 	public enum VentanasEnum{
-		CREAR_CUENTA("crear-cuenta");
+		CREAR_CUENTA("crear-cuenta"), INGRESAR_USUARIO("ingresar-usuario"), MENU_USUARIO("menu-usuario");
 		
 		private String nombre;
 		

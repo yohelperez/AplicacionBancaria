@@ -43,7 +43,7 @@ public class CrearCuentaController extends BaseController {
 		}
 		else {
 			Alert alert= new Alert(Alert.AlertType.ERROR);
-			alert.setTitle("Registro de Cuenta");
+			alert.setTitle("REGISTRO DE CUENTA");
 			alert.setHeaderText("Hay Campos Vacios");
 			alert.setContentText("Diligencie todos los campos por favor");
 			alert.showAndWait();
