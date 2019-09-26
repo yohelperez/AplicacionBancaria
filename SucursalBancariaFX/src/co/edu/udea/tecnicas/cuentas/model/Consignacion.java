@@ -8,10 +8,41 @@ public class Consignacion {
     private Object origen;
     private Cuenta destino;
 
-    public Consignacion(Integer id, BigDecimal monto, Object origen, Cuenta destino) {
-        this.id = id;
+    public Consignacion(BigDecimal monto, Object origen, Cuenta destino) {
         this.monto = monto;
         this.origen = origen;
+        this.destino = destino;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public BigDecimal getMonto() {
+        return monto;
+    }
+
+    public void setMonto(BigDecimal monto) {
+        this.monto = monto;
+    }
+
+    public Object getOrigen() {
+        return origen;
+    }
+
+    public void setOrigen(Object origen) {
+        this.origen = origen;
+    }
+
+    public Cuenta getDestino() {
+        return destino;
+    }
+
+    public void setDestino(Cuenta destino) {
         this.destino = destino;
     }
 }

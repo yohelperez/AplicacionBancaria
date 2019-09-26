@@ -11,7 +11,9 @@ public class RetiroBsn {
         this.retiroDao = new RetiroDaoList();
     }
 
-    public void registrarConsignacion(Retiro retiro){
-        //todo logica y validacion registrar retiro
+    public void retirar(Retiro retiro){
+        if (retiroDao.contarRetirosEnElDia(retiro.getCuenta()).compareTo(7)<0){
+            retiroDao.guardarRetiro(retiro);
+        }//todo limit exceeded exception
     }
 }

@@ -14,15 +14,13 @@ public class CuentaBsn {
     }
 
     public void registrar(Cuenta cuenta){
-        //todo validacion y logica registrar
+        cuentaDao.guardarCuenta(cuenta);
     }
 
     public void eliminar(Cuenta cuenta){
-        //todo logica y validacion eliminar
-    }
-
-    public void consignar(Cuenta cuenta, BigDecimal monto){
-     //todo logica y validacion consignar
+        if (cuenta.getSaldo().equals(BigDecimal.ZERO)){//Borra la cuenta si no tiene saldo
+            cuentaDao.eliminarCuenta(cuenta);
+        }//todo lanzar excepcion en caso de no poder borrar la cuenta
     }
 
 }
