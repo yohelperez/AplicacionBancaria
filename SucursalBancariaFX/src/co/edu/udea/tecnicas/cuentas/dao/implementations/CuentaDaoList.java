@@ -24,6 +24,16 @@ public class CuentaDaoList implements CuentaDao {
         }
     }
 
+    @Override
+    public Boolean loginAccount(Cuenta cuentaAuth) {
+        for(Cuenta cuenta : cuentas){
+            if (cuenta.getUsuario().equals(cuentaAuth.getUsuario()) && cuenta.getPassword().equals(cuentaAuth.getPassword())){
+                return true;
+            }
+        }
+        return false;
+    }
+
     private Optional<Cuenta> buscarCuentaPorId(Integer id) {
         Optional<Cuenta> cuentaOptional = Optional.empty();
         for (Cuenta cuenta : cuentas) {

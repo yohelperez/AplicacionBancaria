@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CajaDao {
     void guardarCaja(Caja caja);
+    Boolean loginCaja(Caja cajaAuth);
 }
