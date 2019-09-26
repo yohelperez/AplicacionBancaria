@@ -21,7 +21,12 @@ public class ContenedorPrincipalController {
 	}
 	
 	@FXML
-	private void mnuIngresar_action() {
+	private void mnuIngresarUsuario_action() {
+		
+	}
+	
+	@FXML
+	private void mnuIngresarCaja_action() {
 		
 	}
 	

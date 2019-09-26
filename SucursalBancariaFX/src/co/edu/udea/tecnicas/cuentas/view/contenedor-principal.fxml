@@ -14,12 +14,17 @@
                   <MenuItem mnemonicParsing="false" onAction="#mnuSalir_action" text="Salir" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Cuentas">
+          <Menu mnemonicParsing="false" text="Cuenta">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#mnuIngresar_action" text="Ingresar" />
-                  <MenuItem mnemonicParsing="false" onAction="#mnuCrearCuentaUsuario_action" text="Crear Cuenta Usuario" />
-                  <MenuItem mnemonicParsing="false" onAction="#mnuCrearCuentaCaja_action" text="Crear Cuenta Caja" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuIngresarUsuario_action" text="Ingresar" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuCrearCuentaUsuario_action" text="Crear Cuenta" />
                </items></Menu>
+            <Menu mnemonicParsing="false" text="Caja">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#mnuIngresarCaja_action" text="Ingresar" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnuCrearCuentaCaja_action" text="Crear Cuenta " />
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>
