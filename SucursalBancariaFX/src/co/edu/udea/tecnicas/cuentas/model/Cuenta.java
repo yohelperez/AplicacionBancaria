@@ -1,10 +1,12 @@
 package co.edu.udea.tecnicas.cuentas.model;
 
+import com.sun.xml.internal.ws.commons.xmlutil.Converter;
+
 import java.math.BigDecimal;
 
 public class Cuenta {
-    private Integer id;
-    private String nombre,apellido,usuario,password;
+    private Integer id, password;
+    private String nombre,apellido,usuario;
     private BigDecimal saldo;
     private Boolean estado;//true -> cuenta activa, inactiva en otro caso.
 
@@ -12,9 +14,15 @@ public class Cuenta {
         this.nombre = nombre;
         this.apellido = apellido;
         this.usuario = usuario;
-        this.password = password;
+        this.password = password.hashCode();
         this.saldo = BigDecimal.ZERO;
         this.estado = true;
+    }
+
+    public Cuenta(String usuario, String password){
+        //login constructor
+        this.usuario = usuario;
+        this.password = password.hashCode();
     }
 
     public Integer getId() {
@@ -49,11 +57,11 @@ public class Cuenta {
         this.usuario = usuario;
     }
 
-    public String getPassword() {
+    public Integer getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(Integer password) {
         this.password = password;
     }
 

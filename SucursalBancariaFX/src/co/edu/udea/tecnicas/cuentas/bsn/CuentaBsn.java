@@ -23,4 +23,11 @@ public class CuentaBsn {
         }//todo lanzar excepcion en caso de no poder borrar la cuenta
     }
 
+    public boolean login(Cuenta cuenta){
+        if (cuentaDao.loginAccount(cuenta)){
+            return true;
+        }
+        return false;//si retorna false debe mostrar en vista el mensaje de user/pass incorrecto.
+    }
+
 }
