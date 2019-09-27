@@ -60,13 +60,14 @@ public class IngresarUsuarioController extends BaseController {
 		return valido;
 	}
 	
-	public void procesarMensaje(Object mensaje) {
-		
-	}
 	
 	private void limpiarCampos() {
 		txtUsuario.setText("");
 		txtContrasenia.setText("");
 	}
-
+	
+	
+	public void procesarMensaje(Object mensaje) {
+		
+	}
 }
