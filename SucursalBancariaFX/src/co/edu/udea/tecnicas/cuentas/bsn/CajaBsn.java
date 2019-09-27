@@ -2,6 +2,7 @@ package co.edu.udea.tecnicas.cuentas.bsn;
 
 import co.edu.udea.tecnicas.cuentas.dao.CajaDao;
 import co.edu.udea.tecnicas.cuentas.dao.exceptions.DuplicatedKeyException;
+import co.edu.udea.tecnicas.cuentas.dao.exceptions.EmptyListException;
 import co.edu.udea.tecnicas.cuentas.dao.implementations.CajaDaoList;
 import co.edu.udea.tecnicas.cuentas.model.Caja;
 import co.edu.udea.tecnicas.cuentas.model.Cuenta;
@@ -17,7 +18,13 @@ public class CajaBsn {
     }
 
     public Caja loginCaja(Caja caja) {
-        Optional<Caja> cajaOptional = Optional.of(cajaDao.loginCaja(caja));
+        Optional<Caja> cajaOptional = Optional.empty();
+        try {
+            cajaOptional = Optional.of(cajaDao.loginCaja(caja));
+        } catch (EmptyListException ex) {
+            return null;
+        }
+
         if (cajaOptional.isPresent()) {
             return cajaOptional.get();
         }
