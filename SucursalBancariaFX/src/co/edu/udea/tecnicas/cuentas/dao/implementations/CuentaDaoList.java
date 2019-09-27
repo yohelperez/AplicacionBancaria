@@ -2,6 +2,7 @@ package co.edu.udea.tecnicas.cuentas.dao.implementations;
 
 import co.edu.udea.tecnicas.cuentas.dao.CuentaDao;
 import co.edu.udea.tecnicas.cuentas.dao.exceptions.DuplicatedKeyException;
+import co.edu.udea.tecnicas.cuentas.dao.exceptions.EmptyListException;
 import co.edu.udea.tecnicas.cuentas.model.Cuenta;
 
 import java.util.ArrayList;
@@ -34,7 +35,13 @@ public class CuentaDaoList implements CuentaDao {
     }
 
     @Override
-    public Cuenta loginAccount(Cuenta cuentaAuth) {
+    public Cuenta loginAccount(Cuenta cuentaAuth) throws EmptyListException {
+        Integer listSize = cuentas.size(), sizeForException = 0;
+
+        if (sizeForException.equals(listSize.compareTo(0))){
+            throw new EmptyListException();
+        }
+
         for(Cuenta cuenta : cuentas){
             if (cuenta.getUsuario().equals(cuentaAuth.getUsuario()) && cuenta.getPassword().equals(cuentaAuth.getPassword())
                 && cuenta.getEstado()){

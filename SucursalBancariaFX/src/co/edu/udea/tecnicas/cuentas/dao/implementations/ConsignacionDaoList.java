@@ -16,14 +16,4 @@ public class ConsignacionDaoList implements ConsignacionDao {
         consignaciones.add(consignacion);
     }
 
-    private Optional<Consignacion> buscarConsignacionPorId(Integer id) {
-        Optional<Consignacion> consignacionOptional = Optional.empty();
-        for (Consignacion consignacion : consignaciones) {
-            if (id.equals(consignacion.getId())) {
-                consignacionOptional = Optional.of(consignacion);
-                break;
-            }
-        }
-        return consignacionOptional;
-    }
 }

@@ -2,6 +2,7 @@ package co.edu.udea.tecnicas.cuentas.bsn;
 
 import co.edu.udea.tecnicas.cuentas.dao.CuentaDao;
 import co.edu.udea.tecnicas.cuentas.dao.exceptions.DuplicatedKeyException;
+import co.edu.udea.tecnicas.cuentas.dao.exceptions.EmptyListException;
 import co.edu.udea.tecnicas.cuentas.dao.implementations.CuentaDaoList;
 import co.edu.udea.tecnicas.cuentas.model.Cuenta;
 
@@ -22,7 +23,7 @@ public class CuentaBsn {
             return true;
         } catch (DuplicatedKeyException ex) {
             return false;//De lanzarse, el controlador debe informar que el nombre de usuario
-                            //está repetido.
+            //está repetido.
         }
     }
 
@@ -34,7 +35,14 @@ public class CuentaBsn {
     }
 
     public Cuenta login(Cuenta cuenta) {
-        Optional<Cuenta> cuentaOptional = Optional.of(cuentaDao.loginAccount(cuenta));
+        Optional<Cuenta> cuentaOptional = Optional.empty();
+
+        try {
+            cuentaOptional = Optional.of(cuentaDao.loginAccount(cuenta));
+        } catch (EmptyListException ex) {
+            return null;
+        }
+
         if (cuentaOptional.isPresent()) {
             return cuentaOptional.get();
         }

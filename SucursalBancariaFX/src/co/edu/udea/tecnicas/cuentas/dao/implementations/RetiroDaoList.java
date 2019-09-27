@@ -19,17 +19,6 @@ public class RetiroDaoList implements RetiroDao {
         retiros.add(retiro);
     }
 
-    private Optional<Retiro> buscarRetirosPorId(Integer id) {
-        Optional<Retiro> retiroOptional = Optional.empty();
-        for (Retiro retiro : retiros) {
-            if (id.equals(retiro.getId())) {
-                retiroOptional = Optional.of(retiro);
-                break;
-            }
-        }
-        return retiroOptional;
-    }
-
     public Integer contarRetirosEnElDia(Cuenta cuenta){
         Integer retirosAlDia = 0;
 
