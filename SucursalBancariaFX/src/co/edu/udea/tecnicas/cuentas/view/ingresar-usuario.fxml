@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.tecnicas.cuentas.controller.IngresarUsuarioController">
    <children>
-      <VBox prefHeight="200.0" prefWidth="189.0">
+      <VBox layoutX="-2.0" prefHeight="200.0" prefWidth="189.0">
          <children>
             <Label prefHeight="38.0" prefWidth="85.0" text="INGRESAR" textAlignment="CENTER">
                <VBox.margin>

@@ -3,6 +3,7 @@ package co.edu.udea.tecnicas.cuentas.controller;
 import java.io.IOException;
 
 import co.edu.udea.tecnicas.cuentas.controller.base.BaseController;
+import co.edu.udea.tecnicas.cuentas.model.Cuenta;
 //import co.edu.udea.tecnicas.cuentas.controller.ContenedorPrincipalController.VentanasEnum
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +12,8 @@ import javafx.scene.layout.BorderPane;
 
 public class ContenedorPrincipalController {
 	private static final String VIEWS_PATH= "../view/";
-	
+	public static Cuenta cuentaUsuario; 
+
 	@FXML
     private BorderPane contenedorPrincipal;
 	

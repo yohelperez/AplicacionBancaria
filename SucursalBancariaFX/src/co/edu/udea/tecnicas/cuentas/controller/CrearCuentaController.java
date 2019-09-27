@@ -5,6 +5,7 @@ import co.edu.udea.tecnicas.cuentas.controller.base.BaseController;
 import co.edu.udea.tecnicas.cuentas.model.Cuenta;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class CrearCuentaController extends BaseController {
@@ -16,7 +17,7 @@ public class CrearCuentaController extends BaseController {
 	@FXML
 	private TextField txtUsuario;
 	@FXML
-	private TextField txtContrasenia;
+	private PasswordField txtContrasenia;
 	
 	private CuentaBsn cuentaBsn= new CuentaBsn();
 	
@@ -31,15 +32,30 @@ public class CrearCuentaController extends BaseController {
 		boolean formularioValido=validarCampos(nombre, apellido, usuario, contrasenia);
 		if(formularioValido) {
 			Cuenta cuenta= new Cuenta(nombre, apellido, usuario, contrasenia);
-			cuentaBsn.registrar(cuenta); 
-			Alert alert= new Alert(Alert.AlertType.INFORMATION);
-			alert.setTitle("Registro de Cuenta");
-			alert.setHeaderText("Cuenta Creada Correctamente!");
-			alert.setContentText("Nombre: " + cuenta.getNombre() + " " + cuenta.getApellido() +
-					"\nUsuario: " + cuenta.getUsuario() +
-					"\nNumero de Cuenta: " + cuenta.getId());
-			alert.showAndWait();
-			limpiarCampos();
+			boolean registro= cuentaBsn.registrar(cuenta); 
+			if(registro) {
+				Alert alert= new Alert(Alert.AlertType.INFORMATION);
+				alert.setTitle("REGISTRO DE CUENTA");
+				alert.setHeaderText("Cuenta Creada Correctamente!");
+				alert.setContentText("Nombre: " + cuenta.getNombre() + " " + cuenta.getApellido() +
+						"\nUsuario: " + cuenta.getUsuario() +
+						"\nNumero de Cuenta: " + cuenta.getId());
+				alert.showAndWait();
+				
+				contenedorPadre.cuentaUsuario= new Cuenta(usuario, contrasenia);
+				contenedorPadre.cuentaUsuario=cuentaBsn.login(contenedorPadre.cuentaUsuario);
+				contenedorPadre.cambiarVentana("menu-usuario");
+				
+			}
+			else {
+				Alert alert= new Alert(Alert.AlertType.ERROR);
+				alert.setTitle("REGISTRO DE CUENTA");
+				alert.setHeaderText("Ya existe una cuenta con este usuario");
+				alert.setContentText("Verifique los campos por favor");
+				alert.showAndWait();
+				limpiarCampos();
+			}
+			
 		}
 		else {
 			Alert alert= new Alert(Alert.AlertType.ERROR);
@@ -47,6 +63,7 @@ public class CrearCuentaController extends BaseController {
 			alert.setHeaderText("Hay Campos Vacios");
 			alert.setContentText("Diligencie todos los campos por favor");
 			alert.showAndWait();
+			limpiarCampos();
 		}
 	}
 	
