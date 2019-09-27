@@ -1,6 +1,7 @@
 package co.edu.udea.tecnicas.cuentas.dao.implementations;
 
 import co.edu.udea.tecnicas.cuentas.dao.CajaDao;
+import co.edu.udea.tecnicas.cuentas.dao.exceptions.DuplicatedKeyException;
 import co.edu.udea.tecnicas.cuentas.model.Caja;
 
 import java.util.ArrayList;
@@ -13,19 +14,24 @@ public class CajaDaoList implements CajaDao {
     private static List<Caja> cajas = new ArrayList<>();
 
     @Override
-    public void guardarCaja(Caja caja) {
+    public void guardarCaja(Caja caja) throws DuplicatedKeyException {
+        for (Caja iterCaja : cajas){
+            if (iterCaja.getIdentificacion().equals(caja.getIdentificacion())){
+                throw new DuplicatedKeyException();
+            }
+        }
         caja.setId(cajas.size() + 1);
         cajas.add(caja);
     }
 
     @Override
-    public Boolean loginCaja(Caja cajaAuth) {
+    public Caja loginCaja(Caja cajaAuth){
         for(Caja caja : cajas){
             if (caja.getIdentificacion().equals(cajaAuth.getIdentificacion()) && caja.getPassword().equals(cajaAuth.getPassword())){
-                return true;
+                return caja;
             }
         }
-        return false;
+        return null;
     }
 
     private Optional<Caja> buscarCajasPorId(Integer id) {
