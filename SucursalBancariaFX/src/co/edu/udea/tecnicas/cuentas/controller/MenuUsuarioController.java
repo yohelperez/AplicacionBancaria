@@ -11,6 +11,7 @@ import co.edu.udea.tecnicas.cuentas.controller.base.BaseController;
 import co.edu.udea.tecnicas.cuentas.model.Consignacion;
 import co.edu.udea.tecnicas.cuentas.model.Cuenta;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
 public class MenuUsuarioController extends BaseController {
@@ -25,7 +26,7 @@ public class MenuUsuarioController extends BaseController {
 	private TextField txtNumeroCuentaTransferir;
 	@FXML
 	private TextField txtMontoTransferir;
-	
+	private CuentaBsn cuentaBsn= new CuentaBsn();
 	
 	public void asignarDatos() {
 		txtNombres.setText(ContenedorPrincipalController.cuentaUsuario.getNombre() + " " + contenedorPadre.cuentaUsuario.getApellido());
@@ -37,7 +38,7 @@ public class MenuUsuarioController extends BaseController {
 		String numeroCuenta=txtNumeroCuentaTransferir.getText();
 		String monto= txtMontoTransferir.getText();
 		boolean formularioValido=validarCampos(numeroCuenta, monto);
-		CuentaBsn cuentaBsn= new CuentaBsn();
+		
 		Cuenta cuentaDestino;
 		
 		if(formularioValido) {
@@ -50,7 +51,20 @@ public class MenuUsuarioController extends BaseController {
 	}
 	
 	public void btnEliminarCuenta_action() {
-		
+		boolean eliminado= cuentaBsn.eliminar(contenedorPadre.cuentaUsuario);
+		if(eliminado) {
+			Alert alert= new Alert(Alert.AlertType.INFORMATION);
+			alert.setHeaderText("Cuenta Eliminada");
+			alert.showAndWait();
+			
+			contenedorPadre.cambiarVentana("crear-cuenta");
+		}
+		else {
+			Alert alert= new Alert(Alert.AlertType.ERROR);
+			alert.setHeaderText("No Posible Eliminar La Cuenta");
+			alert.setContentText("Para eliminar su cuenta, el saldo debe ser $0");
+			alert.showAndWait();
+		}
 	}
 	
 	
