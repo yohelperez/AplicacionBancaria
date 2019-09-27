@@ -57,7 +57,7 @@
                   <TextField fx:id="txtNombre" prefWidth="68.0" GridPane.columnIndex="1" />
                   <TextField fx:id="txtApellido" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="txtUsuario" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="txtContraseña" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtContrasenia" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
             <Button mnemonicParsing="false" onAction="#btnAceptar_action" text="aceptar" textAlignment="RIGHT">
