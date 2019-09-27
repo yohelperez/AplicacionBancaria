@@ -3,11 +3,14 @@ package co.edu.udea.tecnicas.cuentas.controller;
 import java.awt.Button;
 import java.awt.event.ActionEvent;
 import java.math.BigDecimal;
+import java.util.Optional;
 
 import com.sun.xml.internal.ws.org.objectweb.asm.Label;
 
+import co.edu.udea.tecnicas.cuentas.bsn.ConsignacionBsn;
 import co.edu.udea.tecnicas.cuentas.bsn.CuentaBsn;
 import co.edu.udea.tecnicas.cuentas.controller.base.BaseController;
+import co.edu.udea.tecnicas.cuentas.dao.implementations.CuentaDaoList;
 import co.edu.udea.tecnicas.cuentas.model.Consignacion;
 import co.edu.udea.tecnicas.cuentas.model.Cuenta;
 import javafx.fxml.FXML;
@@ -35,17 +38,38 @@ public class MenuUsuarioController extends BaseController {
 		
 	}
 	public void btnConsignar_action() {
+		ConsignacionBsn consignacionBsn= new ConsignacionBsn();
 		String numeroCuenta=txtNumeroCuentaTransferir.getText();
 		String monto= txtMontoTransferir.getText();
 		boolean formularioValido=validarCampos(numeroCuenta, monto);
-		
-		Cuenta cuentaDestino;
-		
+		Optional<Cuenta>cuenta= CuentaDaoList.buscarCuentaPorId(Integer.parseInt(numeroCuenta));
 		if(formularioValido) {
-			//if(cuentaBsn.buscarCuentaPorId(Integer.parseInt(numeroCuenta))!=null) {
-				//cuentaDestino=cuentaBsn.buscarCuentaPorId(Integer.parseInt(numeroCuenta));
-			//}
-			BigDecimal valor= new BigDecimal(monto);
+			if(cuenta.isPresent()) {
+				Cuenta cuentaDestino=cuenta.get();
+				BigDecimal valor= new BigDecimal(monto);
+				Consignacion consignacion= new Consignacion(valor, contenedorPadre.cuentaUsuario, cuentaDestino);
+				boolean resultado=consignacionBsn.consignar(consignacion);
+				if(resultado) {
+					Alert alert= new Alert(Alert.AlertType.INFORMATION);
+					alert.setTitle("RESULTADO DE LA CONSIGNACION");
+					alert.setHeaderText("Consignacion Realizada Correctamente!");
+					alert.showAndWait();
+				}
+				else {
+					Alert alert= new Alert(Alert.AlertType.ERROR);
+					alert.setTitle("RESULTADO DE LA CONSIGNACION");
+					alert.setHeaderText("ERROR:\nEl monto a consignar excede el valor maximo");
+					alert.showAndWait();
+				}
+			}
+			else {
+				Alert alert= new Alert(Alert.AlertType.ERROR);
+				alert.setTitle("RESULTADO DE LA CONSIGNACION");
+				alert.setHeaderText("ERROR:\nLa cuenta no existe");
+				alert.showAndWait();
+			}
+			
+			
 			//nsignacion consignacion= new Consignacion(valor, contenedorPadre.cuentaUsuario.getId(), );
 		}
 	}
@@ -88,7 +112,6 @@ public class MenuUsuarioController extends BaseController {
 	
 	private void limpiarCampos() {
 		txtMontoTransferir.setText("");
-		
 	}
 
 }

@@ -51,7 +51,7 @@ public class CuentaDaoList implements CuentaDao {
         return null;
     }
 
-    private Optional<Cuenta> buscarCuentaPorId(Integer id) {
+    public static Optional<Cuenta> buscarCuentaPorId(Integer id) {
         Optional<Cuenta> cuentaOptional = Optional.empty();
         for (Cuenta cuenta : cuentas) {
             if (id.equals(cuenta.getId())) {
