@@ -16,17 +16,19 @@ public class ConsignacionBsn {
         this.consignacionDao = new ConsignacionDaoList();
     }
 
-    public void consignar(Consignacion consignacion) {
+    public Boolean consignar(Consignacion consignacion) {
 
         if (consignacion.getOrigen() instanceof Caja) {
             if (consignacion.getMonto().compareTo(new BigDecimal("10000000.00")) < 0) {
                 consignacionDao.guardarConsignacion(consignacion);
+                return true;
             }//todo exception for exceeded ammount available
         } else if (consignacion.getOrigen() instanceof Cuenta) {
             if (consignacion.getMonto().compareTo(new BigDecimal("99000000.00")) < 0) {
                 consignacionDao.guardarConsignacion(consignacion);
+                return true;
             }//todo exception for exceeded ammount available from Cuenta
         }
-
+        return false;
     }
 }

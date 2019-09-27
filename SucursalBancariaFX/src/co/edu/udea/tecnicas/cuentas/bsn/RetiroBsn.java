@@ -11,9 +11,11 @@ public class RetiroBsn {
         this.retiroDao = new RetiroDaoList();
     }
 
-    public void retirar(Retiro retiro){
+    public Boolean retirar(Retiro retiro){
         if (retiroDao.contarRetirosEnElDia(retiro.getCuenta()).compareTo(7)<0){
             retiroDao.guardarRetiro(retiro);
+            return true;
         }//todo limit exceeded exception
+        return false;
     }
 }
