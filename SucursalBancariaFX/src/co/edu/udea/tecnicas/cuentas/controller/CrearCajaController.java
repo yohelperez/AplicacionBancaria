@@ -5,6 +5,7 @@ import co.edu.udea.tecnicas.cuentas.controller.base.BaseController;
 import co.edu.udea.tecnicas.cuentas.model.Caja;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class CrearCajaController extends BaseController{
@@ -12,7 +13,7 @@ public class CrearCajaController extends BaseController{
 	private TextField txtId;
 	
 	@FXML
-	private TextField txtContrasenia;
+	private PasswordField txtContrasenia;
 	
 	private CajaBsn cajaBsn= new CajaBsn();
 	
