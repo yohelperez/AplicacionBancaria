@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+import co.edu.udea.tecnicas.cuentas.bsn.exceptions.ExceededAmmountException;
 import com.sun.xml.internal.ws.org.objectweb.asm.Label;
 
 import co.edu.udea.tecnicas.cuentas.bsn.ConsignacionBsn;
@@ -61,7 +62,7 @@ public class MenuUsuarioController extends BaseController {
 			
 			try {
 				boolean resultado=consignacionBsn.consignar(consignacion);
-			}catch (IllegalTransactionException | InsufficientBalanceException ex) {
+			}catch (IllegalTransactionException | InsufficientBalanceException | ExceededAmmountException ex) {
 				Alert alert= new Alert(Alert.AlertType.ERROR);
 				alert.setTitle("RESULTADO DE LA CONSIGNACION");
 				alert.setHeaderText(ex.getMessage());
