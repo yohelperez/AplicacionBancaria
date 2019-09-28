@@ -31,10 +31,10 @@ public class MenuUsuarioController extends BaseController {
 	private TextField txtMontoTransferir;
 	private CuentaBsn cuentaBsn= new CuentaBsn();
 	
-	public void asignarDatos() {
-		txtNombres.setText(ContenedorPrincipalController.cuentaUsuario.getNombre() + " " + contenedorPadre.cuentaUsuario.getApellido());
-		txtNumeroCuenta.setText(contenedorPadre.cuentaUsuario.getId().toString());
-		txtSaldo.setText(contenedorPadre.cuentaUsuario.getSaldo().toString());
+	public void btnMostrarDatos_action() {
+		txtNombres.setText(ContenedorPrincipalController.cuentaUsuario.getNombre() + " " + ContenedorPrincipalController.cuentaUsuario.getApellido());
+		txtNumeroCuenta.setText(ContenedorPrincipalController.cuentaUsuario.getId().toString());
+		txtSaldo.setText(ContenedorPrincipalController.cuentaUsuario.getSaldo().toString());
 		
 	}
 	public void btnConsignar_action() {
@@ -68,9 +68,6 @@ public class MenuUsuarioController extends BaseController {
 				alert.setHeaderText("ERROR:\nLa cuenta no existe");
 				alert.showAndWait();
 			}
-			
-			
-			//nsignacion consignacion= new Consignacion(valor, contenedorPadre.cuentaUsuario.getId(), );
 		}
 	}
 	

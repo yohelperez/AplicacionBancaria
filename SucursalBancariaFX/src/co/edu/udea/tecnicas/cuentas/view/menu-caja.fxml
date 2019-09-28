@@ -27,6 +27,7 @@
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
@@ -44,25 +45,30 @@
                      </GridPane.margin>
                   </TextField>
                   <TextField fx:id="txtNumeroCuenta" editable="false" focusTraversable="false" mouseTransparent="true" GridPane.columnIndex="2" />
-                  <Label text="MOVIMIENTOS" GridPane.rowIndex="1">
+                  <Label text="MOVIMIENTOS" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="txtMontoRetiro" GridPane.rowIndex="2">
+                  <TextField fx:id="txtMontoRetiro" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets left="5.0" />
                      </GridPane.margin></TextField>
-                  <Button mnemonicParsing="false" onAction="#btnRetirar_action" text="Retirar" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button focusTraversable="false" mnemonicParsing="false" onAction="#btnConsignar_action" prefHeight="25.0" prefWidth="74.0" text="Consignar" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" onAction="#btnRetirar_action" text="Retirar" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Button focusTraversable="false" mnemonicParsing="false" onAction="#btnConsignar_action" prefHeight="25.0" prefWidth="74.0" text="Consignar" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
                   </Button>
-                  <TextField fx:id="txtMontoConsignacion" GridPane.rowIndex="3">
+                  <TextField fx:id="txtMontoConsignacion" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets left="5.0" />
                      </GridPane.margin></TextField>
+                  <Button mnemonicParsing="false" onAction="#btnMostrarDatos_action" text="Mostrar Datos" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="40.0" />
+                     </GridPane.margin>
+                  </Button>
                </children>
             </GridPane>
          </children>

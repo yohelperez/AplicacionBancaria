@@ -18,14 +18,15 @@ public class IngresarUsuarioController extends BaseController {
 	private PasswordField txtContrasenia;
 	private CuentaBsn cuentaBsn= new CuentaBsn();
 	
+	
 	public void btnAceptar_action() {
 		String usuario=txtUsuario.getText();
 		String contrasenia= txtContrasenia.getText();
 		boolean formularioValido= validarCampos(usuario, contrasenia);
 		if(formularioValido) {
-			contenedorPadre.cuentaUsuario= new Cuenta(usuario, contrasenia);
-			contenedorPadre.cuentaUsuario=cuentaBsn.login(contenedorPadre.cuentaUsuario);
-			if( contenedorPadre.cuentaUsuario!=null) {
+			ContenedorPrincipalController.cuentaUsuario= new Cuenta(usuario, contrasenia);
+			ContenedorPrincipalController.cuentaUsuario=cuentaBsn.login(contenedorPadre.cuentaUsuario);
+			if( ContenedorPrincipalController.cuentaUsuario!=null) {
 				contenedorPadre.cambiarVentana("menu-usuario");
 			}
 			else {
