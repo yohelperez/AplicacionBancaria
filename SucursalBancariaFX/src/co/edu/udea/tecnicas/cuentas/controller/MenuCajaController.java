@@ -5,9 +5,11 @@ import java.math.BigDecimal;
 import co.edu.udea.tecnicas.cuentas.bsn.ConsignacionBsn;
 import co.edu.udea.tecnicas.cuentas.bsn.CuentaBsn;
 import co.edu.udea.tecnicas.cuentas.bsn.RetiroBsn;
+import co.edu.udea.tecnicas.cuentas.bsn.exceptions.ExceededAmmountException;
 import co.edu.udea.tecnicas.cuentas.bsn.exceptions.IllegalTransactionException;
 import co.edu.udea.tecnicas.cuentas.bsn.exceptions.InsufficientBalanceException;
 import co.edu.udea.tecnicas.cuentas.bsn.exceptions.NonExistAccountException;
+import co.edu.udea.tecnicas.cuentas.bsn.exceptions.TransactionsExceededException;
 import co.edu.udea.tecnicas.cuentas.controller.base.BaseController;
 import co.edu.udea.tecnicas.cuentas.model.Consignacion;
 import co.edu.udea.tecnicas.cuentas.model.Cuenta;
@@ -56,8 +58,19 @@ public class MenuCajaController extends BaseController {
 			}
 			BigDecimal valor= new BigDecimal(monto);
 			Retiro retiro= new Retiro(cuenta, valor);
-			
-			
+			try {
+				boolean resultado=retiroBsn.retirar(retiro);
+			}catch (InsufficientBalanceException | TransactionsExceededException ex) {
+				Alert alert= new Alert(Alert.AlertType.ERROR);
+				alert.setTitle("RESULTADO DEL RETIRO");
+				alert.setHeaderText(ex.getMessage());
+				alert.showAndWait();
+				return;
+			}
+			Alert alert= new Alert(Alert.AlertType.INFORMATION);
+			alert.setTitle("RESULTADO DEL RETIRO");
+			alert.setHeaderText("Retiro Realizado Correctamente!");
+			alert.showAndWait();
 			
 		}
 	}
@@ -85,6 +98,12 @@ public class MenuCajaController extends BaseController {
 			try {
 				boolean resultado=consignacionBsn.consignar(consignacion);
 			}catch (IllegalTransactionException | InsufficientBalanceException ex) {
+				Alert alert= new Alert(Alert.AlertType.ERROR);
+				alert.setTitle("RESULTADO DE LA CONSIGNACION");
+				alert.setHeaderText(ex.getMessage());
+				alert.showAndWait();
+				return;
+			}catch (ExceededAmmountException ex) {
 				Alert alert= new Alert(Alert.AlertType.ERROR);
 				alert.setTitle("RESULTADO DE LA CONSIGNACION");
 				alert.setHeaderText(ex.getMessage());
