@@ -6,6 +6,8 @@ import co.edu.udea.tecnicas.cuentas.dao.RetiroDao;
 import co.edu.udea.tecnicas.cuentas.dao.implementations.RetiroDaoList;
 import co.edu.udea.tecnicas.cuentas.model.Retiro;
 
+import java.math.BigDecimal;
+
 public class RetiroBsn {
     private RetiroDao retiroDao;
 
@@ -14,9 +16,11 @@ public class RetiroBsn {
     }
 
     public Boolean retirar(Retiro retiro) throws InsufficientBalanceException, TransactionsExceededException {
+        BigDecimal minValue = new BigDecimal("10000");
         if (retiroDao.contarRetirosEnElDia(retiro.getCuenta()).compareTo(7) < 0) {
 
-            if (retiro.getCuenta().getSaldo().compareTo(retiro.getMonto()) >= 0) {
+            if (retiro.getCuenta().getSaldo().compareTo(retiro.getMonto()) >= 0 ||
+                    retiro.getCuenta().getSaldo().compareTo(minValue) >= 0) {
                 retiroDao.guardarRetiro(retiro);
                 return true;
             } else throw new InsufficientBalanceException();//arroja excepción de saldo insuficiente.
