@@ -16,14 +16,18 @@ public class RetiroDaoList implements RetiroDao {
     @Override
     public void guardarRetiro(Retiro retiro) {
         retiro.setId(retiros.size() + 1);
+        retiro.getCuenta().setSaldo(retiro.getCuenta().getSaldo().subtract(retiro.getMonto()));
         retiros.add(retiro);
     }
 
     public Integer contarRetirosEnElDia(Cuenta cuenta){
         Integer retirosAlDia = 0;
+        LocalDateTime today = LocalDateTime.now();
 
         for(Retiro retiro : retiros){
-            if (retiro.getCuenta().equals(cuenta) && retiro.getFecha().equals(LocalDateTime.now())){
+
+            if (retiro.getCuenta().equals(cuenta) && retiro.getFecha().isAfter(today.minusDays(1))&&
+                    retiro.getFecha().isBefore(today.plusDays(1))){
                 retirosAlDia++;
             }
         }

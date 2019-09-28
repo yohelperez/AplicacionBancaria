@@ -1,5 +1,6 @@
 package co.edu.udea.tecnicas.cuentas.bsn;
 
+import co.edu.udea.tecnicas.cuentas.bsn.exceptions.ExceededAmmountException;
 import co.edu.udea.tecnicas.cuentas.bsn.exceptions.IllegalTransactionException;
 import co.edu.udea.tecnicas.cuentas.bsn.exceptions.InsufficientBalanceException;
 import co.edu.udea.tecnicas.cuentas.dao.ConsignacionDao;
@@ -18,7 +19,9 @@ public class ConsignacionBsn {
         this.consignacionDao = new ConsignacionDaoList();
     }
 
-    public Boolean consignar(Consignacion consignacion) throws IllegalTransactionException, InsufficientBalanceException {
+    public Boolean consignar(Consignacion consignacion) throws IllegalTransactionException, InsufficientBalanceException,
+            ExceededAmmountException {
+
         //validacion autoconsignación.
         if (consignacion.getOrigen().equals(consignacion.getDestino())){
             throw new IllegalTransactionException();
@@ -28,7 +31,7 @@ public class ConsignacionBsn {
             if (consignacion.getMonto().compareTo(new BigDecimal("10000000.00")) < 0) {
                 consignacionDao.guardarConsignacion(consignacion);
                 return true;
-            }//todo exception for exceeded ammount available
+            }throw new ExceededAmmountException();
         } else if (consignacion.getOrigen() instanceof Cuenta) {
 
             //validación saldo suficiente
@@ -39,7 +42,7 @@ public class ConsignacionBsn {
             if (consignacion.getMonto().compareTo(new BigDecimal("99000000.00")) < 0) {
                 consignacionDao.guardarConsignacion(consignacion);
                 return true;
-            }//todo exception for exceeded ammount available from Cuenta
+            }throw new ExceededAmmountException();
         }
         return false;
     }
