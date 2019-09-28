@@ -1,5 +1,6 @@
 package co.edu.udea.tecnicas.cuentas.bsn;
 
+import co.edu.udea.tecnicas.cuentas.bsn.exceptions.NonExistAccountException;
 import co.edu.udea.tecnicas.cuentas.dao.CuentaDao;
 import co.edu.udea.tecnicas.cuentas.dao.exceptions.DuplicatedKeyException;
 import co.edu.udea.tecnicas.cuentas.dao.exceptions.EmptyListException;
@@ -47,6 +48,16 @@ public class CuentaBsn {
             return cuentaOptional.get();
         }
         return null;//si retorna null debe mostrar en vista el mensaje de user/pass incorrecto.
+    }
+
+    public Cuenta getCuentaTransaccional(Cuenta transAccount) throws NonExistAccountException {
+        CuentaDaoList cuentaDaoList = new CuentaDaoList();
+        Optional<Cuenta> cuentaOptional = Optional.empty();
+        cuentaOptional = cuentaDaoList.buscarCuentaPorId(transAccount.getId());
+        if (cuentaOptional.isPresent()){
+            return cuentaOptional.get();
+        }
+        throw new NonExistAccountException(); //En caso de que no exista la cuenta de destino de la transaccion.
     }
 
 }

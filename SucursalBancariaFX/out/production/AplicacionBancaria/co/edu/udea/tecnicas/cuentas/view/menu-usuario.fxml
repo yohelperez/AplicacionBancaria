@@ -71,7 +71,7 @@
                         <Insets />
                      </GridPane.margin>
                   </GridPane>
-                  <Button fx:id="btnEliminarCuenta_action" focusTraversable="false" mnemonicParsing="false" text="Eliminar Cuenta" GridPane.rowIndex="4">
+                  <Button focusTraversable="false" mnemonicParsing="false" onAction="#btnEliminarCuenta_action" text="Eliminar Cuenta" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets left="5.0" top="20.0" />
                      </GridPane.margin>
@@ -117,7 +117,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnConsignar_action" mnemonicParsing="false" text="Consignar" GridPane.rowIndex="1">
+                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#btnConsignar_action" text="Consignar" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
