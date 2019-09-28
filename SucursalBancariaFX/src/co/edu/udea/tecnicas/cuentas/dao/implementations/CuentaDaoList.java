@@ -36,13 +36,22 @@ public class CuentaDaoList implements CuentaDao {
 
     @Override
     public Cuenta loginAccount(Cuenta cuentaAuth) throws EmptyListException {
-        Integer listSize = cuentas.size(), sizeForException = 0;
+        Integer listActiveSize, sizeForException = 0;
+        List<Cuenta> activesAccounts = new ArrayList<Cuenta>();
 
-        if (sizeForException.equals(listSize.compareTo(0))){
+        for (Cuenta cuenta : cuentas){
+            if (cuenta.getEstado()){
+                activesAccounts.add(cuenta);
+            }
+        }
+
+        listActiveSize = activesAccounts.size();
+
+        if (sizeForException.equals(listActiveSize.compareTo(0))){
             throw new EmptyListException();
         }
 
-        for(Cuenta cuenta : cuentas){
+        for(Cuenta cuenta : activesAccounts){
             if (cuenta.getUsuario().equals(cuentaAuth.getUsuario()) && cuenta.getPassword().equals(cuentaAuth.getPassword())
                 && cuenta.getEstado()){
                 return cuenta;
@@ -51,7 +60,7 @@ public class CuentaDaoList implements CuentaDao {
         return null;
     }
 
-    public static Optional<Cuenta> buscarCuentaPorId(Integer id) {
+    public Optional<Cuenta> buscarCuentaPorId(Integer id) {
         Optional<Cuenta> cuentaOptional = Optional.empty();
         for (Cuenta cuenta : cuentas) {
             if (id.equals(cuenta.getId())) {

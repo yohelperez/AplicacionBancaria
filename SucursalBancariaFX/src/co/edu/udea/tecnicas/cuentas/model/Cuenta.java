@@ -25,6 +25,12 @@ public class Cuenta {
         this.password = password.hashCode();
     }
 
+    //Constructor  para consignar y retirar por numero de cuenta.
+    public Cuenta(Integer id)
+    {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }
