@@ -36,10 +36,7 @@ public class MenuUsuarioController extends BaseController {
 	private CuentaBsn cuentaBsn= new CuentaBsn();
 	
 	public void btnMostrarDatos_action() {
-		txtNombres.setText(ContenedorPrincipalController.cuentaUsuario.getNombre() + " " + ContenedorPrincipalController.cuentaUsuario.getApellido());
-		txtNumeroCuenta.setText(ContenedorPrincipalController.cuentaUsuario.getId().toString());
-		txtSaldo.setText(ContenedorPrincipalController.cuentaUsuario.getSaldo().toString());
-		
+		mostrarDatos();
 	}
 	public void btnConsignar_action() {
 		ConsignacionBsn consignacionBsn= new ConsignacionBsn();
@@ -74,6 +71,7 @@ public class MenuUsuarioController extends BaseController {
 			alert.setTitle("RESULTADO DE LA CONSIGNACION");
 			alert.setHeaderText("Consignacion Realizada Correctamente!");
 			alert.showAndWait();
+			mostrarDatos();
 		}
 	}
 	
@@ -116,5 +114,16 @@ public class MenuUsuarioController extends BaseController {
 	private void limpiarCampos() {
 		txtMontoTransferir.setText("");
 	}
-
+	
+	private void mostrarDatos() {
+		txtNombres.setText(ContenedorPrincipalController.cuentaUsuario.getNombre() + " " + ContenedorPrincipalController.cuentaUsuario.getApellido());
+		txtNumeroCuenta.setText(ContenedorPrincipalController.cuentaUsuario.getId().toString());
+		txtSaldo.setText(ContenedorPrincipalController.cuentaUsuario.getSaldo().toString());
+	}
+	
+	public void btnSaldoDolares_action() {
+		int saldo=ContenedorPrincipalController.cuentaUsuario.getSaldo().intValue();
+		saldo=saldo/3400;
+		txtSaldo.setText(Integer.toString(saldo));
+	}
 }

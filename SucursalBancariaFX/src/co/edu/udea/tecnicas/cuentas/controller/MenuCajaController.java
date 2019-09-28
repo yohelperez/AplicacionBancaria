@@ -71,6 +71,7 @@ public class MenuCajaController extends BaseController {
 			alert.setTitle("RESULTADO DEL RETIRO");
 			alert.setHeaderText("Retiro Realizado Correctamente!");
 			alert.showAndWait();
+			limpiarCampos();
 			
 		}
 	}
@@ -115,6 +116,7 @@ public class MenuCajaController extends BaseController {
 			alert.setTitle("RESULTADO DE LA CONSIGNACION");
 			alert.setHeaderText("Consignacion Realizada Correctamente!");
 			alert.showAndWait();
+			limpiarCampos();
 		}
 	}
 	
@@ -132,7 +134,16 @@ public class MenuCajaController extends BaseController {
 				break;
 			}
 		}
+		
+		
 		return valido;
+	}
+	
+	private void limpiarCampos() {
+		txtCuentaRetiro.setText("");
+		txtCuentaConsignacion.setText("");
+		txtMontoRetiro.setText("");
+		txtMontoConsignacion.setText("");
 	}
 
 }
