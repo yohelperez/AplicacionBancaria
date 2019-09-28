@@ -9,6 +9,9 @@ import com.sun.xml.internal.ws.org.objectweb.asm.Label;
 
 import co.edu.udea.tecnicas.cuentas.bsn.ConsignacionBsn;
 import co.edu.udea.tecnicas.cuentas.bsn.CuentaBsn;
+import co.edu.udea.tecnicas.cuentas.bsn.exceptions.IllegalTransactionException;
+import co.edu.udea.tecnicas.cuentas.bsn.exceptions.InsufficientBalanceException;
+import co.edu.udea.tecnicas.cuentas.bsn.exceptions.NonExistAccountException;
 import co.edu.udea.tecnicas.cuentas.controller.base.BaseController;
 import co.edu.udea.tecnicas.cuentas.dao.implementations.CuentaDaoList;
 import co.edu.udea.tecnicas.cuentas.model.Consignacion;
@@ -42,37 +45,39 @@ public class MenuUsuarioController extends BaseController {
 		String numeroCuenta=txtNumeroCuentaTransferir.getText();
 		String monto= txtMontoTransferir.getText();
 		boolean formularioValido=validarCampos(numeroCuenta, monto);
-		Optional<Cuenta>cuenta= CuentaDaoList.buscarCuentaPorId(Integer.parseInt(numeroCuenta));
 		if(formularioValido) {
-			if(cuenta.isPresent()) {
-				Cuenta cuentaDestino=cuenta.get();
-				BigDecimal valor= new BigDecimal(monto);
-				Consignacion consignacion= new Consignacion(valor, contenedorPadre.cuentaUsuario, cuentaDestino);
-				boolean resultado=consignacionBsn.consignar(consignacion);
-				if(resultado) {
-					Alert alert= new Alert(Alert.AlertType.INFORMATION);
-					alert.setTitle("RESULTADO DE LA CONSIGNACION");
-					alert.setHeaderText("Consignacion Realizada Correctamente!");
-					alert.showAndWait();
-				}
-				else {
-					Alert alert= new Alert(Alert.AlertType.ERROR);
-					alert.setTitle("RESULTADO DE LA CONSIGNACION");
-					alert.setHeaderText("ERROR:\nEl monto a consignar excede el valor maximo");
-					alert.showAndWait();
-				}
-			}
-			else {
+			Cuenta cuenta=new Cuenta(Integer.parseInt(numeroCuenta));
+			try {
+				cuenta=cuentaBsn.getCuentaTransaccional(cuenta);
+			}catch (NonExistAccountException ex) {
 				Alert alert= new Alert(Alert.AlertType.ERROR);
 				alert.setTitle("RESULTADO DE LA CONSIGNACION");
-				alert.setHeaderText("ERROR:\nLa cuenta no existe");
+				alert.setHeaderText(ex.getMessage());
 				alert.showAndWait();
+				return;
 			}
+			BigDecimal valor= new BigDecimal(monto);
+			Consignacion consignacion= new Consignacion(valor, ContenedorPrincipalController.cuentaUsuario, cuenta);
+			
+			try {
+				boolean resultado=consignacionBsn.consignar(consignacion);
+			}catch (IllegalTransactionException | InsufficientBalanceException ex) {
+				Alert alert= new Alert(Alert.AlertType.ERROR);
+				alert.setTitle("RESULTADO DE LA CONSIGNACION");
+				alert.setHeaderText(ex.getMessage());
+				alert.showAndWait();
+				return;
+			}
+			
+			Alert alert= new Alert(Alert.AlertType.INFORMATION);
+			alert.setTitle("RESULTADO DE LA CONSIGNACION");
+			alert.setHeaderText("Consignacion Realizada Correctamente!");
+			alert.showAndWait();
 		}
 	}
 	
 	public void btnEliminarCuenta_action() {
-		boolean eliminado= cuentaBsn.eliminar(contenedorPadre.cuentaUsuario);
+		boolean eliminado= cuentaBsn.eliminar(ContenedorPrincipalController.cuentaUsuario);
 		if(eliminado) {
 			Alert alert= new Alert(Alert.AlertType.INFORMATION);
 			alert.setHeaderText("Cuenta Eliminada");
