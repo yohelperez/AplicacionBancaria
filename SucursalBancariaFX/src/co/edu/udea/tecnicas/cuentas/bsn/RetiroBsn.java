@@ -17,7 +17,10 @@ public class RetiroBsn {
 
     public Boolean retirar(Retiro retiro) throws InsufficientBalanceException, TransactionsExceededException {
         BigDecimal minValue = new BigDecimal("10000");
-        if (retiroDao.contarRetirosEnElDia(retiro.getCuenta()).compareTo(7) < 0) {
+        BigDecimal limitPerDay = new BigDecimal("600000");
+
+        if (retiroDao.contarRetirosEnElDia(retiro.getCuenta()).compareTo(7) < 0 &&
+                retiroDao.dineroRetiradoEnElDia(retiro.getCuenta()).compareTo(limitPerDay) <= 0) {
 
             if (retiro.getCuenta().getSaldo().compareTo(retiro.getMonto()) >= 0 ||
                     retiro.getCuenta().getSaldo().compareTo(minValue) >= 0) {
